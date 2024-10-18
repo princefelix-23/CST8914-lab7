@@ -25,6 +25,11 @@ a{
   color: #006b3a;
 }
 
+/* Delete or comment this out */
+/* main a{
+  outline: none;
+} */
+
 h2 {
   margin-top: 0;
 }
@@ -204,10 +209,11 @@ article p {
       <nav class="menu">
         <a href="#">Home</a>
         <a href="#">Politics</a>
+        <!-- Remove tabindex -->
         <a href="#">Business</a>
         <a href="#">Entertainment</a>
         <a href="#">Sports</a>
-        <a href="#" class="btn-search pull-right"><img src="https://raw.githubusercontent.com/udacity/ud891/2de2a0688c68809a3b453db3a24b1a59e8401459/lesson2-focus/02-dom-order/images/search.svg" alt="Search" />Search</a> 
+        <a href="#" class="btn-search pull-right"><img src="https://raw.githubusercontent.com/udacity/ud891/2de2a0688c68809a3b453db3a24b1a59e8401459/lesson2-focus/02-dom-order/images/search.svg" alt="Search" />Search</a> <!-- Should be an input field (With ids and labels), not sure if we have to update it-->
 
       </nav>
     </div>
@@ -252,6 +258,7 @@ article p {
     </div>
     <div class="three-col">
       <div class="tier-header">
+        <!-- Change the tabindex number -->
         <h2 tabindex="0">Recommended</h2>
       </div>
       <div class="columns">
@@ -276,23 +283,23 @@ article p {
     </div>
     
   </main>
-  <!--   stuff can be added here :)
-
-  -->
-
+  <!--   Added footer here  -->
   <footer>
     <div class="newsletter">
       <div class="container">
         <h3>Like the Funion? Consider joining our newsletter!</h3>
-        <input type="text">
-        <button type="button">Sign up</button></div>
+        <label for="email" class="sr-only">Email: </label>
+        <input id="email" type="text">
+        <!-- Remove onfocus to on-click-->
+        <button type="button" onclick="submitEmail()">Sign up</button></div> 
         
       </div>
     </div>
   </footer>
   
   <script>
-    function getFocus() {
+    //Changed function name to reflect its purpose 
+    function submitEmail() {
       window.open('https://aidaform.com/templates/thank-you-page-with-redirects.html','mywindow').focus()
     }
     </script>
